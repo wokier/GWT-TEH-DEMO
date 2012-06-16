@@ -1,0 +1,23 @@
+#container {
+	margin: 1em;
+}
+
+body * {
+	color: #333333;	
+}  
+h1 {
+	color: #EE3322;		
+}
+h2{
+	color: #2277EE;	
+}
+
+.method:first-letter {
+	font-weight: bold;
+}
+.error {
+	color: red;
+	background-color: white;
+	border: 1px solid red;
+	padding: 4px;
+}

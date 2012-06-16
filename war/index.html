@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <title>gwt-teh Demo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/screen.css">
+    <script type="text/javascript" language="javascript" src="gwt_teh_demo/gwt_teh_demo.nocache.js"></script>
+  </head>
+  <body>
+<div id="container">
+    <h1>★ gwt-teh Demo ★</h1>
+
+	<div>
+		TEH stands for <b>T</b>oString <b>E</b>quals <b>H</b>ashCode<br/><br/>
+		TEH uses annotations to implements toString, equals and hashCode, and forces these 2 rules :
+		<ul>
+			<li>any attribute used for hashCode will be used for equals and toString</li>
+			<li>any attribute used for equals will be used for toString</li>
+		</ul>
+		gwt-TEH uses the same annotations, and Generator-reflection to make it available in both client and server sides.
+	</div>
+
+	<h2>Client ➡ Server</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th>Client</th>
+        <th>Server</th>
+      </tr>
+      <tr>
+        <td class="method">toString</td>
+        <td id="toStringClientClient">...</td>
+        <td id="toStringClientServer">...</td>
+      </tr>
+      <tr>
+        <td class="method">equals</td>
+		<td id="equalsClientClient">...</td>
+        <td id="equalsClientServer">...</td>
+      </tr>
+      <tr>
+        <td class="method">hashCode</td>
+        <td id="hashCodeClientClient">...</td>
+        <td id="hashCodeClientServer">...</td>
+      </tr>
+    </table>
+
+	<h2>Server ➡ Client</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th>Client</th>
+        <th>Server</th>
+      </tr>
+      <tr>
+        <td class="method">toString</td>
+        <td id="toStringServerClient">...</td>
+        <td id="toStringServerServer">...</td>
+      </tr>
+      <tr>
+        <td class="method">equals</td>
+		<td id="equalsServerClient">...</td>
+        <td id="equalsServerServer">...</td>
+      </tr>
+      <tr>
+        <td class="method">hashCode</td>
+        <td id="hashCodeServerClient">...</td>
+        <td id="hashCodeServerServer">...</td>
+      </tr>
+    </table>
+
+    <br/>
+    <a href="https://github.com/wokier/TEH">TEH on github</a><br/>
+    <a href="https://github.com/wokier/gwt-teh">gwt-teh on github</a>
+    
+    <div id="error" class="error"></div>
+    </div>
+    <noscript>
+      <div class="error">
+        Your web browser must have JavaScript enabled
+      </div>
+    </noscript>
+  </body>
+</html>

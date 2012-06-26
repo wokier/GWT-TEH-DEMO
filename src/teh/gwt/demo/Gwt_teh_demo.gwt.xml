@@ -20,6 +20,8 @@
 	<set-property name="gwt.logging.consoleHandler" value="DISABLED" />
 	<set-property name="gwt.logging.firebugHandler" value="DISABLED" />
 
+<!-- 	<inherits name='com.google.gwt.junit.JUnit'/> -->
+
 	<entry-point class='teh.gwt.demo.client.EntryPoint' />
 
 	<source path='client' />

@@ -9,6 +9,7 @@ import com.google.gwt.core.client.GWT.UncaughtExceptionHandler;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.user.client.Element;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
 
@@ -19,6 +20,7 @@ public class EntryPoint implements com.google.gwt.core.client.EntryPoint, Schedu
     public void onModuleLoad() {
 	GWT.setUncaughtExceptionHandler(this);
 	Scheduler.get().scheduleDeferred(this);
+	RootPanel.get("loading").getElement().setInnerText("");
     }
 
     @Override
@@ -28,8 +30,8 @@ public class EntryPoint implements com.google.gwt.core.client.EntryPoint, Schedu
     }
 
     private void clientObject() {
-	final Demo demo = new Demo("gwt-teh", 5, "ToString Equals HashCode by annotations for GWT");
-	final Demo otherDemo = new Demo("gwt-teh", 5);
+	final Demo demo = new Demo("gwt-teh", 7, "ToString Equals HashCode by annotations for GWT");
+	final Demo otherDemo = new Demo("gwt-teh", 7);
 
 	RootPanel.get("toStringClientClient").getElement().setInnerText(demo.toString());
 	final Element toStringClientServerElement = RootPanel.get("toStringClientServer").getElement();
@@ -67,9 +69,9 @@ public class EntryPoint implements com.google.gwt.core.client.EntryPoint, Schedu
     }
 
     private void serverObject() {
-	tehService.newDemo("gwt-teh", 5, new AsyncCallback<Demo>() {
+	tehService.newDemo("gwt-teh", 7, new AsyncCallback<Demo>() {
 	    public void onSuccess(final Demo demo) {
-		tehService.newDemo("gwt-teh", 5, new AsyncCallback<Demo>() {
+		tehService.newDemo("gwt-teh", 7, new AsyncCallback<Demo>() {
 		    public void onSuccess(Demo otherDemo) {
 			compare(demo, otherDemo);
 		    }
@@ -132,6 +134,7 @@ public class EntryPoint implements com.google.gwt.core.client.EntryPoint, Schedu
 	toStringServerElement.setInnerText(e.getClass().getName() + ":" + e.getMessage());
 	toStringServerElement.addClassName("error");
 	GWT.log(e.getMessage(), e);
+	Window.alert(e.getMessage());
     }
 
 }

@@ -9,8 +9,16 @@
   <body>
 <div id="container">
     <h1>★ GWT-TEH Demo ★</h1>
+    
+	<span id="annotations">
+		<ul>
+			<li>@ToStringEqualsHashCode</li>
+			<li>@ToStringEquals</li>
+			<li>@ToString</li>
+		</ul>
+	</span>
 
-	<div>
+	<span id="intro">
 		TEH stands for <b>T</b>oString <b>E</b>quals <b>H</b>ashCode<br/><br/>
 		TEH uses annotations to implements toString, equals and hashCode, and forces these 2 rules :
 		<ul>
@@ -18,8 +26,8 @@
 			<li>any attribute used for equals will be used for toString</li>
 		</ul>
 		GWT-TEH uses the same annotations, and Code generation to make it available in both client and server sides.
-	</div>
-
+	</span>
+	
 	<h2>Client ➡ Server</h2>
     <table>
       <tr>
@@ -67,8 +75,7 @@
         <td id="hashCodeServerServer">...</td>
       </tr>
     </table>
-
-    <br/>
+	<div id="loading">Loading...</div>
     <br/>
     <div class="right">
     	<a href="https://github.com/wokier/TEH">TEH on github</a><br/>

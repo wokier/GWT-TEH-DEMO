@@ -4,6 +4,21 @@
 	margin: 1em;
 }
 
+#intro {
+	font-size: 1.2em;
+}
+
+#annotations {
+	font-style: italic;
+	font-size: 2em;
+	color: #555555;
+	float: right;
+}
+
+#annotations ul {
+	list-style: none;
+}
+
 body * {
 	color: #333333;
 	font-family: 'Canatata One';
@@ -15,13 +30,15 @@ h2{
 	color: #2277EE;	
 }
 
+th {
+	border-bottom: 2px solid #333333; 
+}
 .method:first-letter {
 	font-weight: bold;
 }
 .error {
 	color: red;
 	background-color: white;
-	border: 1px solid red;
 	padding: 4px;
 }
 .right {
